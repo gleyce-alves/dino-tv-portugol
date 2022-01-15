@@ -23,7 +23,7 @@ programa
 	 //inteiro para carregar imagens
 	 
 	inteiro bronze = g.carregar_imagem("plano_bronze.jpeg"), prata = g.carregar_imagem("plano_prata.jpeg"), ouro = g.carregar_imagem("plano_ouro.jpeg"), 
-	rubi = g.carregar_imagem("plano_rubi.jpeg"), painel_principal = g.carregar_imagem("teste.jpeg"), painel_plano = g.carregar_imagem("teste-teste.jpeg"), 
+	rubi = g.carregar_imagem("plano_rubi.jpeg"), painel_principal = g.carregar_imagem("teste.jpeg"), painel_plano = g.carregar_imagem("painel-planos.jpg"), 
 	adeus = g.carregar_imagem("bye.jpg"), codigo_barras = g.carregar_imagem("codigo-barras.png")
 	
 	inteiro plano, confirma = 0, idade = 0
@@ -171,7 +171,7 @@ programa
 		}}
 
 
-// Janelas: Interface Gráfica//
+// Janelas: Interface Gráfica //
 
 	funcao montaJanela(){
 		g.iniciar_modo_grafico(verdadeiro)
@@ -187,11 +187,10 @@ programa
 		g.definir_dimensoes_janela(600, 600)
 		
 	}
-	
 
 	funcao mostraMenuPlanos(){
 		g.iniciar_modo_grafico(verdadeiro)
-		g.definir_dimensoes_janela(largura_janela, altura_janela)
+		g.definir_dimensoes_janela(1120, 489)
 		g.definir_titulo_janela("Planos disponiveis na Dino TV")
 		g.desenhar_imagem(0,0,painel_plano)
 		g.renderizar()
@@ -267,7 +266,9 @@ programa
 		}
 	}
 
-// Interaçao com o mouse
+
+// Interação com o mouse //
+
 
 	funcao logico mouse(inteiro x, inteiro y, inteiro a, inteiro b)
 	{
@@ -396,8 +397,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3306; 
- * @DOBRAMENTO-CODIGO = [62, 72, 82, 101, 183, 214, 219, 229, 239, 249, 259, 271, 280, 295, 310, 326, 342, 358, 374];
+ * @POSICAO-CURSOR = 6665; 
+ * @DOBRAMENTO-CODIGO = [62, 72, 82, 101, 158, 175, 183, 203, 199, 213, 218, 228, 238, 248, 258, 272, 281, 296, 311, 327, 343, 359, 375];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
