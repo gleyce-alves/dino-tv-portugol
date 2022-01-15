@@ -1,12 +1,17 @@
 /*****************************************************************************************************************************************************************************************
 ************************************************************************************ Programa DINO TV ************************************************************************************
+******************************************************************************************************************************************************************************************
 *                                                                                                                                                                                        *
 *  Algoritmo criado com o Portugol e Portugol Studio para a conclusão do Módulo I do programa Novos Talentos: Curso de qualificação socioprofissional em programação em software oferecido 
 *  pelo Governo de Pernamuco através da Secretaria doo Trabalho - SETEQ.                                                                                                                 *
 *                                                                                                                                                                                        *
-*  Aluna: Gleyce Alves                                                                                                                                                                    *
-*  Professor: Lucas Santos                                                                                                                                                                *
+*  Equipe:
+*  Designer: Gustavo Aguiar
+*  Desenvolvedora: Gleyce Alves
+*  Business: Luciana Ifamayer, Rafaela Correia e Raiane Correia                                                                                                                                                                 *
+*  Professor: Lucas Santos                                                                                                                                                               *
 *                                                                                                                                                                                        *
+******************************************************************************************************************************************************************************************
 ******************************************************************************************************************************************************************************************
 ******************************************************************************************************************************************************************************************/
 
@@ -18,12 +23,12 @@ programa
 	inclua biblioteca Mouse --> m //captura entrada mouse
 	
 	// Definindo as constantes para a interface gráfica
-	const inteiro largura_janela = 841, altura_janela =600, MENU_PRINCIPAL = 11, tela_atual = 0
+	const inteiro largura_janela = 720, altura_janela =720, MENU_PRINCIPAL = 11, tela_atual = 0
 
 	 //inteiro para carregar imagens
 	 
 	inteiro bronze = g.carregar_imagem("plano_bronze.jpeg"), prata = g.carregar_imagem("plano_prata.jpeg"), ouro = g.carregar_imagem("plano_ouro.jpeg"), 
-	rubi = g.carregar_imagem("plano_rubi.jpeg"), painel_principal = g.carregar_imagem("teste.jpeg"), painel_plano = g.carregar_imagem("painel-planos.jpg"), 
+	rubi = g.carregar_imagem("plano_rubi.jpeg"), painel_principal = g.carregar_imagem("painel-principal.jpeg"), painel_plano = g.carregar_imagem("painel-planos.jpg"), 
 	adeus = g.carregar_imagem("bye.jpg"), codigo_barras = g.carregar_imagem("codigo-barras.png")
 	
 	inteiro plano, confirma = 0, idade = 0
@@ -44,7 +49,7 @@ programa
 		desenhaTelaMenu()
 		enquanto(verdadeiro){
 			corFundoPadrao()
-			horarioAtual(horarioH)
+			mostraHora(horarioH)
 			interacaoBotaoMenuPlanos()
 			interacaoBotaoSair()
 			
@@ -59,18 +64,7 @@ programa
 
 // Funções para estruturação do código //
  
-
 	funcao mostraHora(inteiro hora){
-		se(hora >= 5 e hora < 12){
-			Cumprimento = "Bom Dia!"
-		}senao se(hora >= 12 e hora <= 17){
-			Cumprimento = "Boa Tarde!"
-		}senao{
-			Cumprimento = "Boa Noite!"
-		}
-	}
-
-	funcao horarioAtual(inteiro hora){
 		se(hora >= 5 e hora < 12){
 			Cumprimento = "Bom Dia!"
 		}senao se(hora >= 12 e hora <= 17){
@@ -201,6 +195,7 @@ programa
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(largura_janela, altura_janela)
 		g.definir_titulo_janela("Uma pena que você tem que ir embora :(")
+		g.desenhar_imagem(0,0,painel_principal)
 		enquanto(verdadeiro){
 		g.desenhar_imagem(0,0,adeus)
 		g.definir_cor(g.COR_PRETO)
@@ -397,8 +392,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6665; 
- * @DOBRAMENTO-CODIGO = [62, 72, 82, 101, 158, 175, 183, 203, 199, 213, 218, 228, 238, 248, 258, 272, 281, 296, 311, 327, 343, 359, 375];
+ * @POSICAO-CURSOR = 6968; 
+ * @DOBRAMENTO-CODIGO = [66, 76, 95, 152, 169, 177, 184, 198, 208, 213, 223, 233, 243, 253, 267, 276, 291, 306, 322, 338, 354, 370];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
