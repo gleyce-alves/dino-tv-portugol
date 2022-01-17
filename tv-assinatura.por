@@ -261,65 +261,6 @@ programa
 		}
 	}
 
-
-// Interação com o mouse //
-
-
-	funcao logico mouse(inteiro x, inteiro y, inteiro a, inteiro b)
-	{
-		se(m.posicao_x() >= x e m.posicao_y() >= y e m.posicao_x() <= x+a e m.posicao_y() <= y+b)
-		{
-			retorne verdadeiro
-		}
-		retorne falso
-	}
-
-	funcao interacaoBotaoMenuPlanos(){
-		g.definir_cor(g.criar_cor(100, 100, 100))
-		g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, verdadeiro)
-		g.definir_cor(g.COR_PRETO)
-		g.definir_tamanho_texto(16.0)
-		g.desenhar_texto(145, 330, "MENU")	
-		se(mouse(115, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
-			g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, falso)
-			g.definir_cor(g.COR_PRETO)
-		     g.definir_tamanho_texto(20.0)
-		     g.desenhar_texto(145, 200, "Deseja escolher um de nossos planos? ")
-		     mostraMenuPlanos()
-			u.aguarde(10000)
-	}}
-
-	funcao interacaoBotaoSair(){
-		g.definir_cor(g.criar_cor(100, 100, 100))
-		g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, verdadeiro)
-		g.definir_cor(g.COR_PRETO)
-		g.definir_tamanho_texto(16.0)
-		g.desenhar_texto(425, 330, "SAIR")	
-		se(mouse(395, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
-			g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, falso)
-			g.definir_cor(g.COR_PRETO)
-		     g.definir_tamanho_texto(20.0)
-		     g.desenhar_texto(425, 200, "Você deseja sair? ")
-		     mostraSair()
-			u.aguarde(10000)
-	}}
-
-	funcao interacaoEscolhePlano(){
-		g.definir_cor(g.criar_cor(100, 100, 100))
-		g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, verdadeiro)
-		g.definir_cor(g.COR_PRETO)
-		g.definir_tamanho_texto(16.0)
-		g.desenhar_texto(145, 330, "Plano 1")	
-		se(mouse(115, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
-			g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, falso)
-			g.definir_cor(g.COR_PRETO)
-		     g.definir_tamanho_texto(20.0)
-		     g.desenhar_texto(145, 200, "Plano 1: Bronze")
-		     escolhePlano()
-		     g.renderizar()
-			u.aguarde(50000)
-	}}
-	
 	funcao interacaoBotaoPlano1(){
 		g.definir_cor(g.criar_cor(100, 100, 100))
 		g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, verdadeiro)
@@ -369,6 +310,51 @@ programa
 		}}
 
 	funcao interacaoBotaoPlano4(){
+
+// Interação com o mouse //
+
+
+	funcao logico mouse(inteiro x, inteiro y, inteiro a, inteiro b)
+	{
+		se(m.posicao_x() >= x e m.posicao_y() >= y e m.posicao_x() <= x+a e m.posicao_y() <= y+b)
+		{
+			retorne verdadeiro
+		}
+		retorne falso
+	}
+
+	funcao interacaoBotaoMenuPlanos(){
+		g.definir_cor(g.criar_cor(100, 100, 100))
+		g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, verdadeiro)
+		g.definir_cor(g.COR_PRETO)
+		g.definir_tamanho_texto(16.0)
+		g.desenhar_texto(145, 330, "MENU")	
+		se(mouse(115, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
+			g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, falso)
+			g.definir_cor(g.COR_PRETO)
+		     g.definir_tamanho_texto(20.0)
+		     g.desenhar_texto(145, 200, "Deseja escolher um de nossos planos? ")
+		     mostraMenuPlanos()
+			u.aguarde(10000)
+	}}
+
+	funcao interacaoBotaoSair(){
+		g.definir_cor(g.criar_cor(100, 100, 100))
+		g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, verdadeiro)
+		g.definir_cor(g.COR_PRETO)
+		g.definir_tamanho_texto(16.0)
+		g.desenhar_texto(425, 330, "SAIR")	
+		se(mouse(395, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
+			g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, falso)
+			g.definir_cor(g.COR_PRETO)
+		     g.definir_tamanho_texto(20.0)
+		     g.desenhar_texto(425, 200, "Você deseja sair? ")
+		     mostraSair()
+			u.aguarde(10000)
+	}}
+
+	
+
 		g.definir_cor(g.criar_cor(100, 100, 100))
 		g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, verdadeiro)
 		g.definir_cor(g.COR_PRETO)
@@ -383,8 +369,7 @@ programa
 			g.renderizar()
 			u.aguarde(10000)
 		}}
-	
-	
+		
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -392,8 +377,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6968; 
- * @DOBRAMENTO-CODIGO = [66, 76, 95, 152, 169, 177, 184, 198, 208, 213, 223, 233, 243, 253, 267, 276, 291, 306, 322, 338, 354, 370];
+ * @POSICAO-CURSOR = 11731; 
+ * @DOBRAMENTO-CODIGO = [66, 95, 152, 169, 177, 184, 198, 193, 208, 213, 223, 233, 243, 253];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
