@@ -21,6 +21,7 @@ programa
 	inclua biblioteca Graficos --> g // inicia a interface gráfica no portugol
 	inclua biblioteca Util --> u // define delay de atualização do jogo
 	inclua biblioteca Mouse --> m //captura entrada mouse
+	inclua biblioteca Teclado --> t
 	
 	// Definindo as constantes para a interface gráfica
 	const inteiro largura_janela = 720, altura_janela =720, MENU_PRINCIPAL = 11, tela_atual = 0
@@ -47,12 +48,11 @@ programa
 		criaCadastro()
 		u.aguarde(1000)
 		desenhaTelaMenu()
-		enquanto(verdadeiro){
+		enquanto(nao t.tecla_pressionada(t.TECLA_ESC)){
 			corFundoPadrao()
 			mostraHora(horarioH)
 			interacaoBotaoMenuPlanos()
 			interacaoBotaoSair()
-			
 			g.definir_cor(g.COR_PRETO)
 			g.definir_tamanho_texto(18.0)
 			g.desenhar_texto(50, 30, Cumprimento + " Seja Bem Vindo(a), " + nome + "!\n")
@@ -261,55 +261,6 @@ programa
 		}
 	}
 
-	funcao interacaoBotaoPlano1(){
-		g.definir_cor(g.criar_cor(100, 100, 100))
-		g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, verdadeiro)
-		g.definir_cor(g.COR_PRETO)
-		g.definir_tamanho_texto(16.0)
-		g.desenhar_texto(145, 330, "Plano 1")	
-		se(mouse(115, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
-			g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, falso)
-			g.definir_cor(g.COR_PRETO)
-		     g.definir_tamanho_texto(20.0)
-		     g.desenhar_texto(145, 200, "Plano 1: Bronze")
-		     mostraPlano1()
-		     g.renderizar()
-			u.aguarde(10000)
-}}
-
-	funcao interacaoBotaoPlano2(){
-		g.definir_cor(g.criar_cor(100, 100, 100))
-		g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, verdadeiro)
-		g.definir_cor(g.COR_PRETO)
-		g.definir_tamanho_texto(16.0)
-		g.desenhar_texto(425, 330, "Plano 2")	
-		se(mouse(395, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
-			g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, falso)
-			g.definir_cor(g.COR_PRETO)
-		     g.definir_tamanho_texto(20.0)
-		     g.desenhar_texto(425, 200, "Plano 2: Prata")
-			mostraPlano2()
-			g.renderizar()
-			u.aguarde(10000)
-		}}
-
-	funcao interacaoBotaoPlano3(){
-		g.definir_cor(g.criar_cor(100, 100, 100))
-		g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, verdadeiro)
-		g.definir_cor(g.COR_PRETO)
-		g.definir_tamanho_texto(16.0)
-		g.desenhar_texto(425, 330, "Plano 3")	
-		se(mouse(395, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
-			g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, falso)
-			g.definir_cor(g.COR_PRETO)
-		     g.definir_tamanho_texto(20.0)
-		     g.desenhar_texto(425, 200, "Plano 3: Ouro")
-			mostraPlano3()
-			g.renderizar()
-			u.aguarde(10000)
-		}}
-
-	funcao interacaoBotaoPlano4(){
 
 // Interação com o mouse //
 
@@ -353,22 +304,22 @@ programa
 			u.aguarde(10000)
 	}}
 
-	
-
+	funcao interacaoEscolhePlano(){
 		g.definir_cor(g.criar_cor(100, 100, 100))
-		g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, verdadeiro)
+		g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, verdadeiro)
 		g.definir_cor(g.COR_PRETO)
 		g.definir_tamanho_texto(16.0)
-		g.desenhar_texto(425, 330, "Plano 4")	
-		se(mouse(395, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
-			g.desenhar_retangulo(400, 320, 90, 35, verdadeiro, falso)
+		g.desenhar_texto(145, 330, "Plano 1")	
+		se(mouse(115, 315, 90, 35) == verdadeiro e m.botao_pressionado(m.BOTAO_ESQUERDO)){
+			g.desenhar_retangulo(120, 320, 90, 35, verdadeiro, falso)
 			g.definir_cor(g.COR_PRETO)
 		     g.definir_tamanho_texto(20.0)
-		     g.desenhar_texto(425, 200, "Plano 4: Rubi")
-			mostraPlano2()
-			g.renderizar()
-			u.aguarde(10000)
-		}}
+		     g.desenhar_texto(145, 200, "Plano 1: Bronze")
+		     escolhePlano()
+		     g.renderizar()
+			u.aguarde(50000)
+	}}
+
 		
 }
 
@@ -377,7 +328,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 11731; 
+ * @POSICAO-CURSOR = 3937; 
  * @DOBRAMENTO-CODIGO = [66, 95, 152, 169, 177, 184, 198, 193, 208, 213, 223, 233, 243, 253];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
