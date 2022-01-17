@@ -21,16 +21,16 @@ programa
 	inclua biblioteca Graficos --> g // inicia a interface gráfica no portugol
 	inclua biblioteca Util --> u // define delay de atualização do jogo
 	inclua biblioteca Mouse --> m //captura entrada mouse
-	inclua biblioteca Teclado --> t
+	inclua biblioteca Teclado --> t // captura entrada teclado
 	
 	// Definindo as constantes para a interface gráfica
-	const inteiro largura_janela = 720, altura_janela =720, MENU_PRINCIPAL = 11, tela_atual = 0
+	const inteiro largura_janela = 600, altura_janela =600, MENU_PRINCIPAL = 11, tela_atual = 0
 
 	 //inteiro para carregar imagens
 	 
 	inteiro bronze = g.carregar_imagem("plano_bronze.jpeg"), prata = g.carregar_imagem("plano_prata.jpeg"), ouro = g.carregar_imagem("plano_ouro.jpeg"), 
 	rubi = g.carregar_imagem("plano_rubi.jpeg"), painel_principal = g.carregar_imagem("painel-principal.jpeg"), painel_plano = g.carregar_imagem("painel-planos.jpg"), 
-	adeus = g.carregar_imagem("bye.jpg"), codigo_barras = g.carregar_imagem("codigo-barras.png")
+	 pagamento = g.carregar_imagem("qrcode-dinotv.png")
 	
 	inteiro plano, confirma = 0, idade = 0
 
@@ -40,13 +40,11 @@ programa
 	inteiro horarioH = c.hora_atual(falso)
 	inteiro horarioM = c.minuto_atual()
 	cadeia Cumprimento = ""
-	logico para_cima = falso, para_baixo=falso
 
 	funcao inicio()
 	{
 		montaJanela()
 		criaCadastro()
-		u.aguarde(1000)
 		desenhaTelaMenu()
 		enquanto(nao t.tecla_pressionada(t.TECLA_ESC)){
 			corFundoPadrao()
@@ -178,7 +176,7 @@ programa
 	funcao desenhaTelaMenu(){
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_titulo_janela("Menu Inicial")
-		g.definir_dimensoes_janela(600, 600)
+		g.definir_dimensoes_janela(largura_janela, altura_janela)
 		
 	}
 
@@ -197,12 +195,13 @@ programa
 		g.definir_titulo_janela("Uma pena que você tem que ir embora :(")
 		g.desenhar_imagem(0,0,painel_principal)
 		enquanto(verdadeiro){
-		g.desenhar_imagem(0,0,adeus)
-		g.definir_cor(g.COR_PRETO)
-		g.definir_tamanho_texto(18.0)
-		g.desenhar_texto(50, 30, "Uma pena que você tenha que ir embora, " + nome + "!")
-		g.desenhar_texto(50, 50, "Qualquer dúvida estamos a disposição! ")
-		g.renderizar()
+			corFundoPadrao()
+			g.desenhar_imagem(10,30,pagamento)
+			g.definir_cor(g.COR_PRETO)
+			g.definir_tamanho_texto(18.0)
+			g.desenhar_texto(50, 30, "Uma pena que você tenha que ir embora, " + nome + "!")
+			g.desenhar_texto(50, 50, "Qualquer dúvida estamos a disposição! ")
+			g.renderizar()
 		}
 	}
 
@@ -256,8 +255,14 @@ programa
 		g.definir_dimensoes_janela(largura_janela, altura_janela)
 		g.definir_titulo_janela("Parabéns pela sua compra! Hora do pagamento. ")
 		enquanto(verdadeiro){
-				g.desenhar_imagem(0,0,codigo_barras)
-				g.renderizar()
+			//g.definir_cor(g.COR_BRANCA)
+			corFundoPadrao()
+			g.definir_tamanho_texto(18.0)
+			g.desenhar_texto(50, 30, Cumprimento + " Seja Bem Vindo(a), " + nome + "!\n")
+			g.desenhar_texto(50, 50, "\nVamos conhecer nossos planos? ")
+			g.desenhar_texto(50, 70, "Agora são: " + horarioH + " horas e "+ horarioM + " minutos")
+			g.desenhar_imagem(0,0,pagamento)
+			g.renderizar()
 		}
 	}
 
@@ -328,8 +333,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3937; 
- * @DOBRAMENTO-CODIGO = [66, 95, 152, 169, 177, 184, 198, 193, 208, 213, 223, 233, 243, 253];
+ * @POSICAO-CURSOR = 6344; 
+ * @DOBRAMENTO-CODIGO = [74, 93, 150, 167, 175, 182, 207, 212, 222, 232, 242];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
