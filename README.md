@@ -6,10 +6,6 @@ Algoritmo criado com o Portugol e Portugol Studio para a conclusão do Módulo I
 
 Desenvolvedora: Gleyce Alves
 
-Designer: Gustavo Aguiar
-
-Business: Luciana Ifamayer, Rafaela Correia e Raiane Correia.
-
 ### Estruturação:
 
 O código foi pensado e desenvolvido em 3 grandes blocos: Estrutura base, Interface gráfica e interação com o mouse.
