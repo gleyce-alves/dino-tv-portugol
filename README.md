@@ -2,7 +2,7 @@
 
 Algoritmo criado com o Portugol e Portugol Studio para a conclusão do Módulo I do programa Novos Talentos: Curso de qualificação socioprofissional em programação em software oferecido pelo Governo de Pernambuco através da Secretaria do Trabalho - SETEQ.      
 
-#####Equipe:
+### Equipe:
 
 Desenvolvedora: Gleyce Alves
 
